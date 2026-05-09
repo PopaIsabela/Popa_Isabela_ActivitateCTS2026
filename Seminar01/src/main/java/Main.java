@@ -7,6 +7,8 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("===== A1 BUILDER =====");
+
         Pacient p1 = new PacientBuilder("Isabela")
                 .setMicDejunInclus(true)
                 .setPapuciCamera(true)
@@ -16,8 +18,11 @@ public class Main {
                 .setPatRabatabil(true)
                 .build();
 
-        System.out.println(p1.toString());
-        System.out.println(p2.toString());
+        System.out.println(p1);
+        System.out.println(p2);
+
+
+        System.out.println("\n===== A3 ABSTRACT FACTORY =====");
 
         AbstractFactory fabricaMed = new FactoryMedical();
         AbstractFactory fabricaNonMed = new FactoryNonMedical();
@@ -28,6 +33,9 @@ public class Main {
         personal1.afisare();
         personal2.afisare();
 
+
+        System.out.println("\n===== A4 PROTOTYPE =====");
+
         Map<String, Float> ingrediente = new HashMap<>();
         ingrediente.put("Substanta1", 15.0f);
         ingrediente.put("Substanta2", 25.5f);
@@ -37,5 +45,41 @@ public class Main {
 
         System.out.println(reteta1);
         System.out.println(reteta2);
+
+
+        System.out.println("\n===== A6 FACADE =====");
+
+        PacientInternare pacientInternare =
+                new PacientInternare("Popa Isabela", true);
+
+        MedicInternare medicInternare =
+                new MedicInternare(true);
+
+        Salon salon =
+                new Salon(2);
+
+        FacadeInternare facadeInternare =
+                new FacadeInternare();
+
+        facadeInternare.verificaInternare(
+                pacientInternare,
+                medicInternare,
+                salon
+        );
+
+
+        System.out.println("\n===== A7 DECORATOR =====");
+
+        Rezultat rezultatPrintat =
+                new RezultatPrintat("Popa Isabela");
+
+        rezultatPrintat.afiseazaRezultat();
+
+        System.out.println();
+
+        Rezultat rezultatOnline =
+                new RezultatOnline(rezultatPrintat);
+
+        rezultatOnline.afiseazaRezultat();
     }
 }
