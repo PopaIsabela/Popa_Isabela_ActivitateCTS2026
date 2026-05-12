@@ -81,5 +81,35 @@ public class Main {
                 new RezultatOnline(rezultatPrintat);
 
         rezultatOnline.afiseazaRezultat();
+
+        System.out.println("\n===== A8 COMPOSITE =====");
+
+        StructuraSpital spital =
+                new Departament("Spital Municipal");
+
+        StructuraSpital cardiologie =
+                new Departament("Cardiologie");
+
+        StructuraSpital chirurgie =
+                new Departament("Chirurgie");
+
+        StructuraSpital sectie1 =
+                new Sectie("Cardiologie Adulti");
+
+        StructuraSpital sectie2 =
+                new Sectie("Cardiologie Pediatrica");
+
+        StructuraSpital sectie3 =
+                new Sectie("Chirurgie Generala");
+
+        cardiologie.adaugaStructura(sectie1);
+        cardiologie.adaugaStructura(sectie2);
+
+        chirurgie.adaugaStructura(sectie3);
+
+        spital.adaugaStructura(cardiologie);
+        spital.adaugaStructura(chirurgie);
+
+        spital.afiseazaStructura(" ");
     }
 }
