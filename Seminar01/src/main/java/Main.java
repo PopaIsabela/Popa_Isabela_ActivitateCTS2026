@@ -111,5 +111,50 @@ public class Main {
         spital.adaugaStructura(chirurgie);
 
         spital.afiseazaStructura(" ");
+
+        System.out.println("\n===== A9 PROXY =====");
+
+        Internare internareSpital = new InternareSpital();
+        Internare proxyInternare = new ProxyInternare(internareSpital);
+
+        PacientProxy pacientCuAsigurare =
+                new PacientProxy("Popa Isabela", true);
+
+        PacientProxy pacientFaraAsigurare =
+                new PacientProxy("Ionescu Ana", false);
+
+        proxyInternare.interneaza(pacientCuAsigurare);
+        proxyInternare.interneaza(pacientFaraAsigurare);
+
+
+        System.out.println("\n===== A10 FLYWEIGHT =====");
+
+        PacientFactoryFlyweight factoryFlyweight =
+                new PacientFactoryFlyweight();
+
+        PacientFlyweight pacient1 =
+                factoryFlyweight.getPacient(
+                        "Popa Isabela",
+                        "0712345678",
+                        "Bucuresti"
+                );
+
+        PacientFlyweight pacient2 =
+                factoryFlyweight.getPacient(
+                        "Popa Isabela",
+                        "0712345678",
+                        "Bucuresti"
+                );
+
+        pacient1.afiseazaInternare(
+                new InternareContext(101, 2, 5)
+        );
+
+        pacient2.afiseazaInternare(
+                new InternareContext(205, 1, 3)
+        );
+
+        System.out.println("Numar obiecte pacient create: "
+                + factoryFlyweight.getNumarPacienti());
     }
 }
