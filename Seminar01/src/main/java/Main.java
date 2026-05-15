@@ -166,5 +166,24 @@ public class Main {
 
         pacientPlata.setModPlata(new PlataCard());
         pacientPlata.platesteInternare(500.0f);
+
+        System.out.println("\n===== A12 OBSERVER =====");
+
+        Spital spitalObserver = new Spital();
+
+        ObserverPacient pacientAbonat1 =
+                new PacientAbonat("Popa Isabela");
+
+        ObserverPacient pacientAbonat2 =
+                new PacientAbonat("Ionescu Maria");
+
+        ObserverPacient pacientAbonat3 =
+                new PacientAbonat("Georgescu Andrei");
+
+        spitalObserver.adaugaObserver(pacientAbonat1);
+        spitalObserver.adaugaObserver(pacientAbonat2);
+        spitalObserver.adaugaObserver(pacientAbonat3);
+
+        spitalObserver.anuntaEpidemie("Gripa sezoniera");
     }
 }
