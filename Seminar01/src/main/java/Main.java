@@ -156,5 +156,15 @@ public class Main {
 
         System.out.println("Numar obiecte pacient create: "
                 + factoryFlyweight.getNumarPacienti());
+
+        System.out.println("\n===== A11 STRATEGY =====");
+
+        PacientPlata pacientPlata =
+                new PacientPlata("Popa Isabela");
+
+        pacientPlata.platesteInternare(350.0f);
+
+        pacientPlata.setModPlata(new PlataCard());
+        pacientPlata.platesteInternare(500.0f);
     }
 }
