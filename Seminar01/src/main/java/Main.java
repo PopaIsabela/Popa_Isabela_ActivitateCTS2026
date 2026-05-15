@@ -185,5 +185,24 @@ public class Main {
         spitalObserver.adaugaObserver(pacientAbonat3);
 
         spitalObserver.anuntaEpidemie("Gripa sezoniera");
+
+        System.out.println("\n===== A13 STATE =====");
+
+        PacientState pacientState =
+                new PacientState("Popa Isabela");
+
+        pacientState.setStare(new StareInternat());
+
+        pacientState.setStare(new StareSubObservatie());
+
+        pacientState.setStare(new StareExternat());
+
+
+        System.out.println("\n===== A14 TEMPLATE METHOD =====");
+
+        InternareTemplate internareTemplate =
+                new InternarePacientTemplate();
+
+        internareTemplate.interneazaPacient();
     }
 }
