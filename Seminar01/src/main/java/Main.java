@@ -204,5 +204,23 @@ public class Main {
                 new InternarePacientTemplate();
 
         internareTemplate.interneazaPacient();
+
+        System.out.println("\n===== A15 COMMAND =====");
+
+        MedicComanda medicComanda =
+                new MedicComanda("Dr. Ionescu");
+
+        OperatorTriaj operatorTriaj =
+                new OperatorTriaj();
+
+        operatorTriaj.adaugaComanda(
+                new ComandaInternare(medicComanda, "Popa Isabela")
+        );
+
+        operatorTriaj.adaugaComanda(
+                new ComandaTratare(medicComanda, "Georgescu Andrei")
+        );
+
+        operatorTriaj.trimiteComenzi();
     }
 }
